@@ -1,0 +1,41 @@
+# Release script for Alfa Addon 
+name: update
+
+on:
+  workflow_dispatch:
+
+# Set permissions for GitHub key
+permissions: write-all
+
+jobs:
+  deploy:
+    name: Update repository
+    runs-on: ubuntu-latest
+
+    env:
+      GIT_USER_NAME: Alfa
+      GIT_USER_EMAIL: alfa-add-on@users.noreply.github.com
+
+    steps:
+      - name: Configure Python 3.8 
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Start update
+        run: |
+          # Updating
+          echo "Entering Git repo directory"
+          cd ${{ github.workspace }}
+          echo "pip-installing lxml"
+          pip install lxml
+          echo "Updating repository"
+          python repo_prep.py
+          echo "Commiting..."
+          git add .
+          git commit -m "Updated addons.xml, addons.xml.md5"
+          git push
+          echo "Update finished!"
