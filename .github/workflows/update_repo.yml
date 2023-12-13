@@ -25,6 +25,11 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v2
 
+      - name: Set-up environment
+        run: |
+          git config --global user.name "[CI] Alfa"
+          git config --global user.email "alfa-add-on@users.noreply.github.com"
+
       - name: Start update
         run: |
           # Updating
