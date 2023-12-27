@@ -132,17 +132,20 @@ class Generator:
                         assets = metadata.find("assets")
                         assets = assets if assets is not None else []
 
-                        # Unpack icons for each add-on
-                        for asset in assets:
-                            file = os.path.join(addon, asset.text)
-                            res_folder = os.path.dirname(file)
-                            archive_inner_file = "/".join([addon, asset.text])
+                        try:
+                            # Unpack icons for each add-on
+                            for asset in assets:
+                                file = os.path.join(addon, asset.text)
+                                res_folder = os.path.dirname(file)
+                                archive_inner_file = "/".join([addon, asset.text])
 
-                            if not os.path.exists(res_folder):
-                                os.makedirs(res_folder)
+                                if not os.path.exists(res_folder):
+                                    os.makedirs(res_folder)
 
-                            with open(file, "wb") as f:
-                                f.write(addon_zip.read(archive_inner_file))
+                                with open(file, "wb") as f:
+                                    f.write(addon_zip.read(archive_inner_file))
+                        except Exception as e:
+                            print("Could not extract assets from %s because %s" % (_path, e, ))
 
                         print("Adding " + addon)
                         addons_xml.append(addon_xml)
@@ -265,7 +268,7 @@ class Compressor:
         self.addon_zip_path = None
         return False
 
-    def _extract_addon_xml_to_release_folder():
+    def _extract_addon_xml_to_release_folder(self):
         the_zip = zipfile.ZipFile(self.addon_zip_path, 'r')
         for filename in the_zip.namelist():
             if filename.find('addon.xml'):
