@@ -1,45 +1,5 @@
 <?xml version='1.0' encoding='utf-8' standalone='yes'?>
 <addons>
-  <addon id="script.module.pyjsparser" name="pyjsparser" version="2.7.1" provider-name="Piotr Dabkowski">
-	<requires/>
-	<extension point="xbmc.python.module" library="lib"/>
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en_GB">Fast javascript parser (based on esprima.js)</summary>
-		<description lang="en_GB">Packed for KODI from https://pypi.org/project/pyjsparser/</description>
-		<platform>all</platform>
-		<language/>
-		<license>MIT</license>
-		<forum/>
-		<website/>
-		<source>https://github.com/PiotrDabkowski/pyjsparser</source>
-		<email/>
-		<assets>
-			<icon>resources/icon.png</icon>
-		</assets>
-	</extension>
-</addon>
-  <addon id="script.module.js2py" name="js2py" version="0.75" provider-name="Piotr Dabkowski">
-	<requires>
-		<import addon="script.module.tzlocal" version="1.2"/>
-		<import addon="script.module.six" version="1.10"/>
-		<import addon="script.module.pyjsparser" version="2.5.1"/>
-	</requires>
-	<extension point="xbmc.python.module" library="lib"/>
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en_GB">JavaScript to Python Translator &amp; JavaScript interpreter written in 100% pure Python.</summary>
-		<description lang="en_GB">Packed for KODI from https://pypi.org/project/js2py/</description>
-		<platform>all</platform>
-		<language/>
-		<license>MIT</license>
-		<forum/>
-		<website/>
-		<source>https://github.com/PiotrDabkowski/Js2Py</source>
-		<email/>
-		<assets>
-			<icon>resources/icon.png</icon>
-		</assets>
-	</extension>
-</addon>
   <addon id="script.module.requests-toolbelt" name="requests-toolbelt" version="1.0.0" provider-name="Ian Cordasco, Cory Benfield">
 	<requires>
 		<import addon="script.module.requests" version="2.0.1"/>
@@ -78,27 +38,6 @@
 		</assets>
 	</extension>
 </addon>
-  <addon id="script.alfa-update-helper" name="Alfa Update Helper" version="0.0.7" provider-name="Alfa Develop group">
-    <requires>
-        <import addon="script.module.requests"/>
-    </requires>
-    <extension point="xbmc.python.script" library="default.py">
-        <provides>executable</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <summary lang="es">Herramienta de actualización para Alfa</summary>
-        <description lang="es">Si tienes problemas actualizando Alfa utiliza esta herramienta</description>
-        <summary lang="en">Updating tool for Alfa</summary>
-        <description lang="en">If you have problems updating Alfa use this tool</description>
-        <platform>all</platform>
-        <assets>
-            <icon>resources/icon.png</icon>
-        </assets>
-    </extension>
-    <extension point="xbmc.service" library="default.py" start="login|startup">
-    </extension>
-
-</addon>
   <addon id="repository.alfa-addon" name="[COLOR red]Alfa Add-on[/COLOR] Repo" version="1.0.8" provider-name="Alfa Development Group">
     <requires>
         <import addon="xbmc.addon" version="12.0.0"/>
@@ -134,7 +73,65 @@
         <source>https://github.com/alfa-addon/alfa-repo</source>
     </extension>
 </addon>
-  <addon id="plugin.video.alfa" name="Alfa" version="3.9.22" provider-name="Alfa Addon">
+  <addon id="script.module.js2py" name="js2py" version="0.75" provider-name="Piotr Dabkowski">
+	<requires>
+		<import addon="script.module.tzlocal" version="1.2"/>
+		<import addon="script.module.six" version="1.10"/>
+		<import addon="script.module.pyjsparser" version="2.5.1"/>
+	</requires>
+	<extension point="xbmc.python.module" library="lib"/>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en_GB">JavaScript to Python Translator &amp; JavaScript interpreter written in 100% pure Python.</summary>
+		<description lang="en_GB">Packed for KODI from https://pypi.org/project/js2py/</description>
+		<platform>all</platform>
+		<language/>
+		<license>MIT</license>
+		<forum/>
+		<website/>
+		<source>https://github.com/PiotrDabkowski/Js2Py</source>
+		<email/>
+		<assets>
+			<icon>resources/icon.png</icon>
+		</assets>
+	</extension>
+</addon>
+  <addon id="script.module.pyjsparser" name="pyjsparser" version="2.7.1" provider-name="Piotr Dabkowski">
+	<requires/>
+	<extension point="xbmc.python.module" library="lib"/>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en_GB">Fast javascript parser (based on esprima.js)</summary>
+		<description lang="en_GB">Packed for KODI from https://pypi.org/project/pyjsparser/</description>
+		<platform>all</platform>
+		<language/>
+		<license>MIT</license>
+		<forum/>
+		<website/>
+		<source>https://github.com/PiotrDabkowski/pyjsparser</source>
+		<email/>
+		<assets>
+			<icon>resources/icon.png</icon>
+		</assets>
+	</extension>
+</addon>
+  <addon id="script.module.rijndael" name="rijndael" version="0.1.1" provider-name="Moeen Zamani">
+	<requires/>
+	<extension point="xbmc.python.module" library="lib"/>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en_GB">Rijndael AES encryption algorithm in pure python.</summary>
+		<description lang="en_GB">Packed for KODI from https://pypi.org/project/rijndael/</description>
+		<platform>all</platform>
+		<language/>
+		<license>MIT</license>
+		<forum/>
+		<website/>
+		<source>https://github.com/moeenz/rijndael</source>
+		<email/>
+		<assets>
+			<icon>resources/icon.png</icon>
+		</assets>
+	</extension>
+</addon>
+  <addon id="plugin.video.alfa" name="Alfa" version="3.9.23" provider-name="Alfa Addon">
     <requires>
         <import addon="script.module.requests"/>
         <import addon="script.module.beautifulsoup4" version="4.5.3"/>
@@ -184,8 +181,9 @@
             [B]Estos son los cambios para esta versión:[/B]
 
             [B]Arreglos[/B]
-            • Divxtotal                                            • Don Torrent
-            • Entrepeliculasyseries                         • JKAnime
+            • Cuevana 3.video                                       • Don Torrent
+            • HDFull                                                          • HenaoJara
+            • PoseidonHD                                               • SoloLatino
             • +18</news>
         <assets>
             <icon>resources/icon.png</icon>
@@ -198,23 +196,26 @@
     </extension>
     <extension point="xbmc.service" library="videolibrary_service.py" start="login|startup"/>
 </addon>
-  <addon id="script.module.rijndael" name="rijndael" version="0.1.1" provider-name="Moeen Zamani">
-	<requires/>
-	<extension point="xbmc.python.module" library="lib"/>
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en_GB">Rijndael AES encryption algorithm in pure python.</summary>
-		<description lang="en_GB">Packed for KODI from https://pypi.org/project/rijndael/</description>
-		<platform>all</platform>
-		<language/>
-		<license>MIT</license>
-		<forum/>
-		<website/>
-		<source>https://github.com/moeenz/rijndael</source>
-		<email/>
-		<assets>
-			<icon>resources/icon.png</icon>
-		</assets>
-	</extension>
+  <addon id="script.alfa-update-helper" name="Alfa Update Helper" version="0.0.7" provider-name="Alfa Develop group">
+    <requires>
+        <import addon="script.module.requests"/>
+    </requires>
+    <extension point="xbmc.python.script" library="default.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="es">Herramienta de actualización para Alfa</summary>
+        <description lang="es">Si tienes problemas actualizando Alfa utiliza esta herramienta</description>
+        <summary lang="en">Updating tool for Alfa</summary>
+        <description lang="en">If you have problems updating Alfa use this tool</description>
+        <platform>all</platform>
+        <assets>
+            <icon>resources/icon.png</icon>
+        </assets>
+    </extension>
+    <extension point="xbmc.service" library="default.py" start="login|startup">
+    </extension>
+
 </addon>
   <addon id="repository.github" name="GitHub Add-on repository" provider-name="i96751414" version="0.0.8">
     <requires>
