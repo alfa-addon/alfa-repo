@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8' standalone='yes'?>
 <addons>
-  <addon id="repository.github" name="GitHub Add-on repository" provider-name="i96751414" version="0.0.8">
+  <addon id="repository.github" name="GitHub Add-on repository" provider-name="i96751414" version="0.0.9">
     <requires>
         <!--<import addon="xbmc.python" version="3.0.0"/>-->
     </requires>
@@ -22,45 +22,49 @@
         <summary lang="es">Repositorio GitHub virtual para el Add-on TORREST y otros</summary>
         <description lang="es">Repositorio configurable que actúa como un proxy para add-ons disponibles en GitHub, como TORREST.</description>
         <news>
-            - Improve HTTP server
-            - Add spanish translation
-            - Allow extracting information about running platform
+- Add Kodi platform detection as default (fallback to OS platforms)
+- Add support for relative assets
+- Make sure repository addons order is always maintained
+- Minor improvements
         </news>
         <assets>
             <icon>icon.png</icon>
         </assets>
     </extension>
 </addon>
-  <addon id="script.module.rijndael" name="rijndael" version="0.1.1" provider-name="Moeen Zamani">
-	<requires/>
-	<extension point="xbmc.python.module" library="lib"/>
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en_GB">Rijndael AES encryption algorithm in pure python.</summary>
-		<description lang="en_GB">Packed for KODI from https://pypi.org/project/rijndael/</description>
-		<platform>all</platform>
-		<language/>
-		<license>MIT</license>
-		<forum/>
-		<website/>
-		<source>https://github.com/moeenz/rijndael</source>
-		<email/>
-		<assets>
-			<icon>resources/icon.png</icon>
-		</assets>
-	</extension>
+  <addon id="script.alfa-update-helper" name="Alfa Update Helper" version="0.0.7" provider-name="Alfa Develop group">
+    <requires>
+        <import addon="script.module.requests"/>
+    </requires>
+    <extension point="xbmc.python.script" library="default.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="es">Herramienta de actualización para Alfa</summary>
+        <description lang="es">Si tienes problemas actualizando Alfa utiliza esta herramienta</description>
+        <summary lang="en">Updating tool for Alfa</summary>
+        <description lang="en">If you have problems updating Alfa use this tool</description>
+        <platform>all</platform>
+        <assets>
+            <icon>resources/icon.png</icon>
+        </assets>
+    </extension>
+    <extension point="xbmc.service" library="default.py" start="login|startup">
+    </extension>
+
 </addon>
-  <addon id="script.module.pyjsparser" name="pyjsparser" version="2.7.1" provider-name="Piotr Dabkowski">
+  <addon id="script.module.brotlipython" name="brotlipython" version="0.0.1" provider-name="pothos">
 	<requires/>
 	<extension point="xbmc.python.module" library="lib"/>
 	<extension point="xbmc.addon.metadata">
-		<summary lang="en_GB">Fast javascript parser (based on esprima.js)</summary>
-		<description lang="en_GB">Packed for KODI from https://pypi.org/project/pyjsparser/</description>
+		<summary lang="en_GB">Pure Python brotli decoder</summary>
+		<description lang="en_GB">Packed for KODI from https://github.com/pothos/brotlipython/</description>
 		<platform>all</platform>
 		<language/>
-		<license>MIT</license>
+		<license>GPLv3</license>
 		<forum/>
 		<website/>
-		<source>https://github.com/PiotrDabkowski/pyjsparser</source>
+		<source>https://github.com/pothos/brotlipython</source>
 		<email/>
 		<assets>
 			<icon>resources/icon.png</icon>
@@ -86,84 +90,6 @@
 			<icon>resources/icon.png</icon>
 		</assets>
 	</extension>
-</addon>
-  <addon id="repository.alfa-addon" name="[COLOR red]Alfa Add-on[/COLOR] Repo" version="1.0.8" provider-name="Alfa Development Group">
-    <requires>
-        <import addon="xbmc.addon" version="12.0.0"/>
-    </requires>
-    <extension point="xbmc.addon.repository" name="Alfa Add-on Repo">
-        <dir>
-            <info compressed="false">https://raw.githubusercontent.com/alfa-addon/alfa-repo/master/addons.xml</info>
-            <checksum>https://raw.githubusercontent.com/alfa-addon/alfa-repo/master/addons.xml.md5</checksum>
-            <datadir zip="true">https://raw.githubusercontent.com/alfa-addon/alfa-repo/master/</datadir>
-        </dir>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <summary lang="ca">Repositori d'Alfa Add-on</summary>
-        <summary lang="en">Alfa Add-on Repository</summary>
-        <summary lang="es">Repositorio de Alfa Add-on</summary>
-        <summary lang="it">Repository di Alfa Add-on</summary>
-        <summary lang="pt">Repositório de Alfa Add-on</summary>
-        <description lang="ca">Repositori per instal·lar Alfa Addon, un dels principals add-ons de contingut de parla hispana al món, successor al conegut Pelisalacarta-ce. També es proveeix algunes utilitats addicionals.</description>
-        <description lang="en">Repository to install Alfa Addon, one of the main Spanish-speaking content add-ons in the world, successor to the well-known Pelisalacarta-ce. Some additional utilities are also provided.</description>
-        <description lang="es">Repositorio para instalar Alfa Addon, uno de los principales add-ons de contenido de habla hispana en el mundo, sucesor al conocido Pelisalacarta-ce. También se provee de algunas utilidades adicionales.</description>
-        <description lang="it">Repository per installare Alfa Addon, uno dei principali add-on di contenuti di lingua spagnola nel mondo, successore del noto Pelisalacarta-ce. Vengono fornite anche alcune utilità aggiuntive.</description>
-        <description lang="pt">Repositório para instalação do Alfa Addon, um dos principais add-ons de conteúdo em língua espanhola do mundo, sucessor do conhecido Pelisalacarta-ce. Alguns utilitários adicionais também são fornecidos.</description>
-        <disclaimer lang="ca">[COLOR red]Els propietaris i distribuïdors d'aquest complemento no proveeixen ni distribueixen cap contingut mostrat pel complemento ni tenen affiliación alguna amb els proveïdors de l'contingut.[/COLOR]</disclaimer>
-        <disclaimer lang="en">[COLOR red]The owners and submitters to this add-on do not host or distribute any of the content displayed by these add-ons nor do they have any affiliation with the content providers.[/COLOR]</disclaimer>
-        <disclaimer lang="es">[COLOR red]Los propietarios y distribuidores de este add-on no proveen ni distribuyen ningún contenido mostrado por el add-on ni tienen afiliación alguna con los proveedores del contenido.[/COLOR]</disclaimer>
-        <disclaimer lang="it">[COLOR red]I proprietari e i distributori di questo add-on aggiuntivo non forniscono o distribuiscono alcun contenuto visualizzato dal add-on aggiuntivo né hanno alcuna affiliazione con i fornitori di contenuti.[/COLOR]</disclaimer>
-        <disclaimer lang="pt">[COLOR red]Os proprietários e distribuidores deste add-on não fornecem ou distribuem qualquer conteúdo exibido pelo add-on nem têm qualquer afiliação com os provedores de conteúdo.[/COLOR]</disclaimer>
-        <platform>all</platform>
-        <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
-        </assets>
-        <source>https://github.com/alfa-addon/alfa-repo</source>
-    </extension>
-</addon>
-  <addon id="script.module.js2py" name="js2py" version="0.75" provider-name="Piotr Dabkowski">
-	<requires>
-		<import addon="script.module.tzlocal" version="1.2"/>
-		<import addon="script.module.six" version="1.10"/>
-		<import addon="script.module.pyjsparser" version="2.5.1"/>
-	</requires>
-	<extension point="xbmc.python.module" library="lib"/>
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en_GB">JavaScript to Python Translator &amp; JavaScript interpreter written in 100% pure Python.</summary>
-		<description lang="en_GB">Packed for KODI from https://pypi.org/project/js2py/</description>
-		<platform>all</platform>
-		<language/>
-		<license>MIT</license>
-		<forum/>
-		<website/>
-		<source>https://github.com/PiotrDabkowski/Js2Py</source>
-		<email/>
-		<assets>
-			<icon>resources/icon.png</icon>
-		</assets>
-	</extension>
-</addon>
-  <addon id="script.alfa-update-helper" name="Alfa Update Helper" version="0.0.7" provider-name="Alfa Develop group">
-    <requires>
-        <import addon="script.module.requests"/>
-    </requires>
-    <extension point="xbmc.python.script" library="default.py">
-        <provides>executable</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <summary lang="es">Herramienta de actualización para Alfa</summary>
-        <description lang="es">Si tienes problemas actualizando Alfa utiliza esta herramienta</description>
-        <summary lang="en">Updating tool for Alfa</summary>
-        <description lang="en">If you have problems updating Alfa use this tool</description>
-        <platform>all</platform>
-        <assets>
-            <icon>resources/icon.png</icon>
-        </assets>
-    </extension>
-    <extension point="xbmc.service" library="default.py" start="login|startup">
-    </extension>
-
 </addon>
   <addon id="plugin.video.alfa" name="Alfa" version="3.9.26" provider-name="Alfa Addon">
     <requires>
@@ -232,22 +158,97 @@
     </extension>
     <extension point="xbmc.service" library="videolibrary_service.py" start="login|startup"/>
 </addon>
-  <addon id="script.module.brotlipython" name="brotlipython" version="0.0.1" provider-name="pothos">
+  <addon id="script.module.pyjsparser" name="pyjsparser" version="2.7.1" provider-name="Piotr Dabkowski">
 	<requires/>
 	<extension point="xbmc.python.module" library="lib"/>
 	<extension point="xbmc.addon.metadata">
-		<summary lang="en_GB">Pure Python brotli decoder</summary>
-		<description lang="en_GB">Packed for KODI from https://github.com/pothos/brotlipython/</description>
+		<summary lang="en_GB">Fast javascript parser (based on esprima.js)</summary>
+		<description lang="en_GB">Packed for KODI from https://pypi.org/project/pyjsparser/</description>
 		<platform>all</platform>
 		<language/>
-		<license>GPLv3</license>
+		<license>MIT</license>
 		<forum/>
 		<website/>
-		<source>https://github.com/pothos/brotlipython</source>
+		<source>https://github.com/PiotrDabkowski/pyjsparser</source>
 		<email/>
 		<assets>
 			<icon>resources/icon.png</icon>
 		</assets>
 	</extension>
+</addon>
+  <addon id="script.module.js2py" name="js2py" version="0.75" provider-name="Piotr Dabkowski">
+	<requires>
+		<import addon="script.module.tzlocal" version="1.2"/>
+		<import addon="script.module.six" version="1.10"/>
+		<import addon="script.module.pyjsparser" version="2.5.1"/>
+	</requires>
+	<extension point="xbmc.python.module" library="lib"/>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en_GB">JavaScript to Python Translator &amp; JavaScript interpreter written in 100% pure Python.</summary>
+		<description lang="en_GB">Packed for KODI from https://pypi.org/project/js2py/</description>
+		<platform>all</platform>
+		<language/>
+		<license>MIT</license>
+		<forum/>
+		<website/>
+		<source>https://github.com/PiotrDabkowski/Js2Py</source>
+		<email/>
+		<assets>
+			<icon>resources/icon.png</icon>
+		</assets>
+	</extension>
+</addon>
+  <addon id="script.module.rijndael" name="rijndael" version="0.1.1" provider-name="Moeen Zamani">
+	<requires/>
+	<extension point="xbmc.python.module" library="lib"/>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en_GB">Rijndael AES encryption algorithm in pure python.</summary>
+		<description lang="en_GB">Packed for KODI from https://pypi.org/project/rijndael/</description>
+		<platform>all</platform>
+		<language/>
+		<license>MIT</license>
+		<forum/>
+		<website/>
+		<source>https://github.com/moeenz/rijndael</source>
+		<email/>
+		<assets>
+			<icon>resources/icon.png</icon>
+		</assets>
+	</extension>
+</addon>
+  <addon id="repository.alfa-addon" name="[COLOR red]Alfa Add-on[/COLOR] Repo" version="1.0.8" provider-name="Alfa Development Group">
+    <requires>
+        <import addon="xbmc.addon" version="12.0.0"/>
+    </requires>
+    <extension point="xbmc.addon.repository" name="Alfa Add-on Repo">
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/alfa-addon/alfa-repo/master/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/alfa-addon/alfa-repo/master/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/alfa-addon/alfa-repo/master/</datadir>
+        </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="ca">Repositori d'Alfa Add-on</summary>
+        <summary lang="en">Alfa Add-on Repository</summary>
+        <summary lang="es">Repositorio de Alfa Add-on</summary>
+        <summary lang="it">Repository di Alfa Add-on</summary>
+        <summary lang="pt">Repositório de Alfa Add-on</summary>
+        <description lang="ca">Repositori per instal·lar Alfa Addon, un dels principals add-ons de contingut de parla hispana al món, successor al conegut Pelisalacarta-ce. També es proveeix algunes utilitats addicionals.</description>
+        <description lang="en">Repository to install Alfa Addon, one of the main Spanish-speaking content add-ons in the world, successor to the well-known Pelisalacarta-ce. Some additional utilities are also provided.</description>
+        <description lang="es">Repositorio para instalar Alfa Addon, uno de los principales add-ons de contenido de habla hispana en el mundo, sucesor al conocido Pelisalacarta-ce. También se provee de algunas utilidades adicionales.</description>
+        <description lang="it">Repository per installare Alfa Addon, uno dei principali add-on di contenuti di lingua spagnola nel mondo, successore del noto Pelisalacarta-ce. Vengono fornite anche alcune utilità aggiuntive.</description>
+        <description lang="pt">Repositório para instalação do Alfa Addon, um dos principais add-ons de conteúdo em língua espanhola do mundo, sucessor do conhecido Pelisalacarta-ce. Alguns utilitários adicionais também são fornecidos.</description>
+        <disclaimer lang="ca">[COLOR red]Els propietaris i distribuïdors d'aquest complemento no proveeixen ni distribueixen cap contingut mostrat pel complemento ni tenen affiliación alguna amb els proveïdors de l'contingut.[/COLOR]</disclaimer>
+        <disclaimer lang="en">[COLOR red]The owners and submitters to this add-on do not host or distribute any of the content displayed by these add-ons nor do they have any affiliation with the content providers.[/COLOR]</disclaimer>
+        <disclaimer lang="es">[COLOR red]Los propietarios y distribuidores de este add-on no proveen ni distribuyen ningún contenido mostrado por el add-on ni tienen afiliación alguna con los proveedores del contenido.[/COLOR]</disclaimer>
+        <disclaimer lang="it">[COLOR red]I proprietari e i distributori di questo add-on aggiuntivo non forniscono o distribuiscono alcun contenuto visualizzato dal add-on aggiuntivo né hanno alcuna affiliazione con i fornitori di contenuti.[/COLOR]</disclaimer>
+        <disclaimer lang="pt">[COLOR red]Os proprietários e distribuidores deste add-on não fornecem ou distribuem qualquer conteúdo exibido pelo add-on nem têm qualquer afiliação com os provedores de conteúdo.[/COLOR]</disclaimer>
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+        <source>https://github.com/alfa-addon/alfa-repo</source>
+    </extension>
 </addon>
 </addons>
