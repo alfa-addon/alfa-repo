@@ -1,94 +1,5 @@
 <?xml version='1.0' encoding='utf-8' standalone='yes'?>
 <addons>
-  <addon id="script.module.rijndael" name="rijndael" version="0.1.1" provider-name="Moeen Zamani">
-	<requires/>
-	<extension point="xbmc.python.module" library="lib"/>
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en_GB">Rijndael AES encryption algorithm in pure python.</summary>
-		<description lang="en_GB">Packed for KODI from https://pypi.org/project/rijndael/</description>
-		<platform>all</platform>
-		<language/>
-		<license>MIT</license>
-		<forum/>
-		<website/>
-		<source>https://github.com/moeenz/rijndael</source>
-		<email/>
-		<assets>
-			<icon>resources/icon.png</icon>
-		</assets>
-	</extension>
-</addon>
-  <addon id="script.module.brotlipython" name="brotlipython" version="0.0.1" provider-name="pothos">
-	<requires/>
-	<extension point="xbmc.python.module" library="lib"/>
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en_GB">Pure Python brotli decoder</summary>
-		<description lang="en_GB">Packed for KODI from https://github.com/pothos/brotlipython/</description>
-		<platform>all</platform>
-		<language/>
-		<license>GPLv3</license>
-		<forum/>
-		<website/>
-		<source>https://github.com/pothos/brotlipython</source>
-		<email/>
-		<assets>
-			<icon>resources/icon.png</icon>
-		</assets>
-	</extension>
-</addon>
-  <addon id="script.alfa-update-helper" name="Alfa Update Helper" version="0.0.7" provider-name="Alfa Develop group">
-    <requires>
-        <import addon="script.module.requests"/>
-    </requires>
-    <extension point="xbmc.python.script" library="default.py">
-        <provides>executable</provides>
-    </extension>
-    <extension point="xbmc.addon.metadata">
-        <summary lang="es">Herramienta de actualización para Alfa</summary>
-        <description lang="es">Si tienes problemas actualizando Alfa utiliza esta herramienta</description>
-        <summary lang="en">Updating tool for Alfa</summary>
-        <description lang="en">If you have problems updating Alfa use this tool</description>
-        <platform>all</platform>
-        <assets>
-            <icon>resources/icon.png</icon>
-        </assets>
-    </extension>
-    <extension point="xbmc.service" library="default.py" start="login|startup">
-    </extension>
-
-</addon>
-  <addon id="repository.github" name="GitHub Add-on repository" provider-name="i96751414" version="0.0.9">
-    <requires>
-        <!--<import addon="xbmc.python" version="3.0.0"/>-->
-    </requires>
-    <extension point="xbmc.addon.repository">
-        <dir>
-            <info>http://127.0.0.1:61234/addons.xml</info>
-            <checksum>http://127.0.0.1:61234/addons.xml.md5</checksum>
-            <datadir>http://127.0.0.1:61234/</datadir>
-        </dir>
-    </extension>
-    <extension point="xbmc.python.script" library="default.py"/>
-    <extension point="xbmc.service" library="service.py"/>
-    <extension point="xbmc.addon.metadata">
-        <platform>all</platform>
-        <license>See https://github.com/i96751414/repository.github/blob/master/LICENSE</license>
-        <source>https://github.com/i96751414/repository.github</source>
-        <summary lang="en">GitHub virtual Add-on repository for TORREST and others</summary>
-        <description lang="en">Customizable repository which acts as a proxy for defined GitHub users' add-ons updates, like TORREST.</description>
-        <summary lang="es">Repositorio GitHub virtual para el Add-on TORREST y otros</summary>
-        <description lang="es">Repositorio configurable que actúa como un proxy para add-ons disponibles en GitHub, como TORREST.</description>
-        <news>
-- Add Kodi platform detection as default (fallback to OS platforms)
-- Add support for relative assets
-- Make sure repository addons order is always maintained
-- Minor improvements
-        </news>
-        <assets>
-            <icon>icon.png</icon>
-        </assets>
-    </extension>
-</addon>
   <addon id="repository.alfa-addon" name="[COLOR red]Alfa Add-on[/COLOR] Repo" version="1.0.8" provider-name="Alfa Development Group">
     <requires>
         <import addon="xbmc.addon" version="12.0.0"/>
@@ -124,28 +35,6 @@
         <source>https://github.com/alfa-addon/alfa-repo</source>
     </extension>
 </addon>
-  <addon id="script.module.js2py" name="js2py" version="0.75" provider-name="Piotr Dabkowski">
-	<requires>
-		<import addon="script.module.tzlocal" version="1.2"/>
-		<import addon="script.module.six" version="1.10"/>
-		<import addon="script.module.pyjsparser" version="2.5.1"/>
-	</requires>
-	<extension point="xbmc.python.module" library="lib"/>
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en_GB">JavaScript to Python Translator &amp; JavaScript interpreter written in 100% pure Python.</summary>
-		<description lang="en_GB">Packed for KODI from https://pypi.org/project/js2py/</description>
-		<platform>all</platform>
-		<language/>
-		<license>MIT</license>
-		<forum/>
-		<website/>
-		<source>https://github.com/PiotrDabkowski/Js2Py</source>
-		<email/>
-		<assets>
-			<icon>resources/icon.png</icon>
-		</assets>
-	</extension>
-</addon>
   <addon id="script.module.futures" name="futures" version="0.0.1" provider-name="Alfa Addon">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
@@ -160,7 +49,78 @@
     <website>https://code.google.com/p/pythonfutures</website>
   </extension>
 </addon>
-  <addon id="plugin.video.alfa" name="Alfa" version="3.9.29" provider-name="Alfa Addon">
+  <addon id="script.alfa-update-helper" name="Alfa Update Helper" version="0.0.7" provider-name="Alfa Develop group">
+    <requires>
+        <import addon="script.module.requests"/>
+    </requires>
+    <extension point="xbmc.python.script" library="default.py">
+        <provides>executable</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="es">Herramienta de actualización para Alfa</summary>
+        <description lang="es">Si tienes problemas actualizando Alfa utiliza esta herramienta</description>
+        <summary lang="en">Updating tool for Alfa</summary>
+        <description lang="en">If you have problems updating Alfa use this tool</description>
+        <platform>all</platform>
+        <assets>
+            <icon>resources/icon.png</icon>
+        </assets>
+    </extension>
+    <extension point="xbmc.service" library="default.py" start="login|startup">
+    </extension>
+
+</addon>
+  <addon id="script.module.rijndael" name="rijndael" version="0.1.1" provider-name="Moeen Zamani">
+	<requires/>
+	<extension point="xbmc.python.module" library="lib"/>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en_GB">Rijndael AES encryption algorithm in pure python.</summary>
+		<description lang="en_GB">Packed for KODI from https://pypi.org/project/rijndael/</description>
+		<platform>all</platform>
+		<language/>
+		<license>MIT</license>
+		<forum/>
+		<website/>
+		<source>https://github.com/moeenz/rijndael</source>
+		<email/>
+		<assets>
+			<icon>resources/icon.png</icon>
+		</assets>
+	</extension>
+</addon>
+  <addon id="repository.github" name="GitHub Add-on repository" provider-name="i96751414" version="0.0.9">
+    <requires>
+        <!--<import addon="xbmc.python" version="3.0.0"/>-->
+    </requires>
+    <extension point="xbmc.addon.repository">
+        <dir>
+            <info>http://127.0.0.1:61234/addons.xml</info>
+            <checksum>http://127.0.0.1:61234/addons.xml.md5</checksum>
+            <datadir>http://127.0.0.1:61234/</datadir>
+        </dir>
+    </extension>
+    <extension point="xbmc.python.script" library="default.py"/>
+    <extension point="xbmc.service" library="service.py"/>
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <license>See https://github.com/i96751414/repository.github/blob/master/LICENSE</license>
+        <source>https://github.com/i96751414/repository.github</source>
+        <summary lang="en">GitHub virtual Add-on repository for TORREST and others</summary>
+        <description lang="en">Customizable repository which acts as a proxy for defined GitHub users' add-ons updates, like TORREST.</description>
+        <summary lang="es">Repositorio GitHub virtual para el Add-on TORREST y otros</summary>
+        <description lang="es">Repositorio configurable que actúa como un proxy para add-ons disponibles en GitHub, como TORREST.</description>
+        <news>
+- Add Kodi platform detection as default (fallback to OS platforms)
+- Add support for relative assets
+- Make sure repository addons order is always maintained
+- Minor improvements
+        </news>
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
+    </extension>
+</addon>
+  <addon id="plugin.video.alfa" name="Alfa" version="3.9.30" provider-name="Alfa Addon">
     <requires>
         <import addon="script.module.requests"/>
         <import addon="script.module.beautifulsoup4" version="4.5.3"/>
@@ -209,11 +169,12 @@
         <source>https://github.com/alfa-addon/addon</source>
         <news>
     [B]Estos son los cambios para esta versión:[/B]
-    • +18                                • Dixtotal
-    • Don Torrent                  • HDFull
-    • Mejortorrent                 • Pelitorrent
-    • Subtorrents                  • YesTorrent: Desactivado
-    • Yts</news>
+    • +18                 • Cuevana2español     • Don Torrent         
+    • Eztv                 • HDFull                          • Pelitorrent         
+    • Solo Latino
+
+    [B]Desactivados:[/B]
+    • AsiaLiveAction      • Dilo                       • Ennovelas</news>
         <assets>
             <icon>resources/icon.png</icon>
             <fanart>resources/fanart.jpg</fanart>
@@ -225,18 +186,22 @@
     </extension>
     <extension point="xbmc.service" library="videolibrary_service.py" start="login|startup"/>
 </addon>
-  <addon id="script.module.pyjsparser" name="pyjsparser" version="2.7.1" provider-name="Piotr Dabkowski">
-	<requires/>
+  <addon id="script.module.js2py" name="js2py" version="0.75" provider-name="Piotr Dabkowski">
+	<requires>
+		<import addon="script.module.tzlocal" version="1.2"/>
+		<import addon="script.module.six" version="1.10"/>
+		<import addon="script.module.pyjsparser" version="2.5.1"/>
+	</requires>
 	<extension point="xbmc.python.module" library="lib"/>
 	<extension point="xbmc.addon.metadata">
-		<summary lang="en_GB">Fast javascript parser (based on esprima.js)</summary>
-		<description lang="en_GB">Packed for KODI from https://pypi.org/project/pyjsparser/</description>
+		<summary lang="en_GB">JavaScript to Python Translator &amp; JavaScript interpreter written in 100% pure Python.</summary>
+		<description lang="en_GB">Packed for KODI from https://pypi.org/project/js2py/</description>
 		<platform>all</platform>
 		<language/>
 		<license>MIT</license>
 		<forum/>
 		<website/>
-		<source>https://github.com/PiotrDabkowski/pyjsparser</source>
+		<source>https://github.com/PiotrDabkowski/Js2Py</source>
 		<email/>
 		<assets>
 			<icon>resources/icon.png</icon>
@@ -257,6 +222,42 @@
 		<forum/>
 		<website/>
 		<source>https://toolbelt.readthedocs.io/</source>
+		<email/>
+		<assets>
+			<icon>resources/icon.png</icon>
+		</assets>
+	</extension>
+</addon>
+  <addon id="script.module.brotlipython" name="brotlipython" version="0.0.1" provider-name="pothos">
+	<requires/>
+	<extension point="xbmc.python.module" library="lib"/>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en_GB">Pure Python brotli decoder</summary>
+		<description lang="en_GB">Packed for KODI from https://github.com/pothos/brotlipython/</description>
+		<platform>all</platform>
+		<language/>
+		<license>GPLv3</license>
+		<forum/>
+		<website/>
+		<source>https://github.com/pothos/brotlipython</source>
+		<email/>
+		<assets>
+			<icon>resources/icon.png</icon>
+		</assets>
+	</extension>
+</addon>
+  <addon id="script.module.pyjsparser" name="pyjsparser" version="2.7.1" provider-name="Piotr Dabkowski">
+	<requires/>
+	<extension point="xbmc.python.module" library="lib"/>
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en_GB">Fast javascript parser (based on esprima.js)</summary>
+		<description lang="en_GB">Packed for KODI from https://pypi.org/project/pyjsparser/</description>
+		<platform>all</platform>
+		<language/>
+		<license>MIT</license>
+		<forum/>
+		<website/>
+		<source>https://github.com/PiotrDabkowski/pyjsparser</source>
 		<email/>
 		<assets>
 			<icon>resources/icon.png</icon>
