@@ -109,7 +109,7 @@
     </extension>
 
 </addon>
-  <addon id="plugin.video.alfa" name="Alfa" version="3.10.0" provider-name="Alfa Addon">
+  <addon id="plugin.video.alfa" name="Alfa" version="3.10.1" provider-name="Alfa Addon">
     <requires>
         <import addon="script.module.requests"/>
         <import addon="script.module.beautifulsoup4" version="4.5.3"/>
