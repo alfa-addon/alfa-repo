@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
-      
+
       - name: Configure Python 3.13
         uses: actions/setup-python@v2
         with:
@@ -30,17 +30,21 @@ jobs:
           git config --global user.name "[CI] Alfa"
           git config --global user.email "alfa-add-on@users.noreply.github.com"
           pip install lxml
-          export BLACKLIST="downloads|mediaserver"
 
-      - name: Start update
+      - name: Generating repo
         run: |
-          # Updating
           echo "Entering Git repo directory"
           cd ${{ github.workspace }}
-          export ADDON_ZIPS=$(find . -maxdepth 2 -type f -name "*.zip" | grep -Ev "$BLACKLIST")
+          BLACKLIST="downloads mediaserver"
+          EXCLUDES=""
+          for pattern in $BLACKLIST; do
+            export EXCLUDES="$EXCLUDES -not -path \"./$pattern/*\"";
+          done;
+          export ADDON_ZIPS=$(eval "find . -maxdepth 2 -type f -name '*.zip' $EXCLUDES")
+          echo "The following zips found"
+          echo $ADDON_ZIPS
           echo "Updating repository"
           python create_repository.py $ADDON_ZIPS
-          echo "Commiting..."
           git add .
           git commit -m "Updated addons.xml and md5's"
           git push
