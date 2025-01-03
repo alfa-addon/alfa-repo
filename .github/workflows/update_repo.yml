@@ -25,27 +25,7 @@ jobs:
         with:
           python-version: '3.13'
 
-      - name: Set-up environment
-        run: |
-          git config --global user.name "[CI] Alfa"
-          git config --global user.email "alfa-add-on@users.noreply.github.com"
-          pip install lxml
-
       - name: Generating repo
         run: |
-          echo "Entering Git repo directory"
           cd ${{ github.workspace }}
-          BLACKLIST="downloads mediaserver"
-          EXCLUDES=""
-          for pattern in $BLACKLIST; do
-            export EXCLUDES="$EXCLUDES -not -path \"./$pattern/*\"";
-          done;
-          export ADDON_ZIPS=$(eval "find . -maxdepth 2 -type f -name '*.zip' $EXCLUDES")
-          echo "The following zips found"
-          echo $ADDON_ZIPS
-          echo "Updating repository"
-          python create_repository.py $ADDON_ZIPS
-          git add .
-          git commit -m "Updated addons.xml and md5's"
-          git push
-          echo "Update finished!"
+          sh gen_repo.sh
