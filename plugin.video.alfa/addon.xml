@@ -65,3 +65,6 @@
     </extension>
     <extension point="xbmc.service" library="videolibrary_service.py" start="login|startup"></extension>
 </addon>
+xtension>
+    <extension point="xbmc.service" library="videolibrary_service.py" start="login|startup"></extension>
+</addon>

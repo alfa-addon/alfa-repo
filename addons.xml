@@ -1,8 +1,7 @@
-<?xml version='1.0' encoding='utf-8' standalone='yes'?>
-<addons>
-  <addon id="repository.github" name="GitHub Add-on repository" provider-name="i96751414" version="0.0.9">
+<?xml version='1.0' encoding='UTF-8'?>
+<addons><addon id="repository.github" name="GitHub Add-on repository" provider-name="i96751414" version="0.0.9">
     <requires>
-        <!--<import addon="xbmc.python" version="3.0.0"/>-->
+        
     </requires>
     <extension point="xbmc.addon.repository">
         <dir>
@@ -11,8 +10,8 @@
             <datadir>http://127.0.0.1:61234/</datadir>
         </dir>
     </extension>
-    <extension point="xbmc.python.script" library="default.py"/>
-    <extension point="xbmc.service" library="service.py"/>
+    <extension point="xbmc.python.script" library="default.py" />
+    <extension point="xbmc.service" library="service.py" />
     <extension point="xbmc.addon.metadata">
         <platform>all</platform>
         <license>See https://github.com/i96751414/repository.github/blob/master/LICENSE</license>
@@ -31,12 +30,11 @@
             <icon>icon.png</icon>
         </assets>
     </extension>
-</addon>
-  <addon id="script.module.futures" name="futures" version="0.0.1" provider-name="Alfa Addon">
+</addon><addon id="script.module.futures" name="futures" version="0.0.1" provider-name="Alfa Addon">
   <requires>
-    <import addon="xbmc.python" version="3.0.0"/>
+    <import addon="xbmc.python" version="3.0.0" />
   </requires>
-  <extension point="xbmc.python.module" library="lib"/>
+  <extension point="xbmc.python.module" library="lib" />
   <extension point="xbmc.addon.metadata">
     <summary>A futures stub. It doesn't provide anything</summary>
     <description>Empty library. For Python 2 compatiblity.</description>
@@ -45,38 +43,167 @@
     <source>https://code.google.com/p/pythonfutures/source/browse</source>
     <website>https://code.google.com/p/pythonfutures</website>
   </extension>
-</addon>
-  <addon id="script.module.rijndael" name="rijndael" version="0.1.1" provider-name="Moeen Zamani">
-	<requires/>
-	<extension point="xbmc.python.module" library="lib"/>
+</addon><addon id="script.module.rijndael" name="rijndael" version="0.1.1" provider-name="Moeen Zamani">
+	<requires />
+	<extension point="xbmc.python.module" library="lib" />
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en_GB">Rijndael AES encryption algorithm in pure python.</summary>
 		<description lang="en_GB">Packed for KODI from https://pypi.org/project/rijndael/</description>
 		<platform>all</platform>
-		<language/>
+		<language />
 		<license>MIT</license>
-		<forum/>
-		<website/>
+		<forum />
+		<website />
 		<source>https://github.com/moeenz/rijndael</source>
-		<email/>
+		<email />
 		<assets>
 			<icon>resources/icon.png</icon>
 		</assets>
 	</extension>
-</addon>
-  <addon id="plugin.video.alfa" name="Alfa" version="3.10.3" provider-name="Alfa Addon">
+</addon><addon id="plugin.video.alfa" name="Alfa" version="3.10.2" provider-name="Alfa Addon">
     <requires>
-        <import addon="script.module.requests"/>
-        <import addon="script.module.beautifulsoup4" version="4.5.3"/>
-        <import addon="script.module.html5lib" version="0.999.0"/>
-        <import addon="script.module.js2py"/>
-        <import addon="script.module.pyaes"/>
-        <import addon="script.module.rijndael"/>
-        <import addon="script.module.brotlipython"/>
-        <import addon="script.module.requests-toolbelt"/>
-        <import addon="script.module.futures"/>
-        <import addon="script.alfa-update-helper" optional="true"/>
-        <import addon="script.module.pyqrcode" optional="true"/>
+        <import addon="script.module.requests" />
+        <import addon="script.module.beautifulsoup4" version="4.5.3" />
+        <import addon="script.module.html5lib" version="0.999.0" />
+        <import addon="script.module.js2py" />
+        <import addon="script.module.pyaes" />
+        <import addon="script.module.rijndael" />
+        <import addon="script.module.brotlipython" />
+        <import addon="script.module.requests-toolbelt" />
+        <import addon="script.module.futures" />
+        <import addon="script.alfa-update-helper" optional="true" />
+        <import addon="script.module.pyqrcode" optional="true" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="ca">Navega amb Kodi per pàgines web.</summary>
+        <summary lang="en">Browse web pages using Kodi</summary>
+        <summary lang="es">Navega con Kodi por páginas web.</summary>
+        <summary lang="it">Sfoglia le pagine web con Kodi.</summary>
+        <summary lang="pt">Navegue por páginas da web com Kodi.</summary>
+        <description lang="ca">Navega amb Kodi per pàgines web per veure els vídeos de manera fàcil.</description>
+        <description lang="en">Browse web pages using Kodi to easily watch their video content.</description>
+        <description lang="es">Navega con Kodi por páginas web para ver sus videos de manera fácil.</description>
+        <description lang="it">Sfoglia le pagine web con Kodi per guardare facilmente i tuoi video.</description>
+        <description lang="pt">Navegue pelas páginas da web com Kodi para assistir seus vídeos
+            facilmente.</description>
+        <disclaimer lang="ca">[COLOR red]Els propietaris i distribuïdors d'aquest complemento no
+            proveeixen ni distribueixen cap contingut mostrat pel complemento ni tenen affiliación
+            alguna amb els proveïdors de l'contingut.[/COLOR]</disclaimer>
+        <disclaimer lang="en">[COLOR red]The owners and submitters to this addon do not host or
+            distribute any of the content displayed by these addons nor do they have any affiliation
+            with the content providers.[/COLOR]</disclaimer>
+        <disclaimer lang="es">[COLOR red]Los propietarios y distribuidores de este addon no proveen
+            ni distribuyen ningún contenido mostrado por el addon ni tienen affiliación alguna con
+            los proveedores del contenido.[/COLOR]</disclaimer>
+        <disclaimer lang="it">[COLOR red]I proprietari e i distributori di questo addon aggiuntivo
+            non forniscono o distribuiscono alcun contenuto visualizzato dal addon aggiuntivo né
+            hanno alcuna affiliazione con i fornitori di contenuti.[/COLOR]</disclaimer>
+        <disclaimer lang="pt">[COLOR red]Os proprietários e distribuidores deste addon não fornecem
+            ou distribuem qualquer conteúdo exibido pelo addon nem têm qualquer afiliação com os
+            provedores de conteúdo.[/COLOR]</disclaimer>
+        <platform>all</platform>
+        <license>GNU GPL v3</license>
+        <source>https://github.com/alfa-addon/addon</source>
+        <news>
+    [B]Estos son los cambios para esta versión:[/B]
+    • +18                   • Don Torrent           • HDFull
+    • Mejortorrent       • Pelitorrent           • Pelisflix
+
+    [B][COLOR red]Desactivados:[/COLOR][/B]
+    • Pelis Maratón</news>
+        <assets>
+            <icon>resources/icon.png</icon>
+            <fanart>resources/fanart.jpg</fanart>
+            <screenshot>resources/media/screenshots/1.jpg</screenshot>
+            <screenshot>resources/media/screenshots/2.jpg</screenshot>
+            <screenshot>resources/media/screenshots/3.jpg</screenshot>
+            <screenshot>resources/media/screenshots/4.jpg</screenshot>
+        </assets>
+    </extension>
+    <extension point="xbmc.service" library="videolibrary_service.py" start="login|startup" />
+</addon><addon id="plugin.video.alfa" name="Alfa" version="3.10.1" provider-name="Alfa Addon">
+    <requires>
+        <import addon="script.module.requests" />
+        <import addon="script.module.beautifulsoup4" version="4.5.3" />
+        <import addon="script.module.html5lib" version="0.999.0" />
+        <import addon="script.module.js2py" />
+        <import addon="script.module.pyaes" />
+        <import addon="script.module.rijndael" />
+        <import addon="script.module.brotlipython" />
+        <import addon="script.module.requests-toolbelt" />
+        <import addon="script.module.futures" />
+        <import addon="script.alfa-update-helper" optional="true" />
+        <import addon="script.module.pyqrcode" optional="true" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="ca">Navega amb Kodi per pàgines web.</summary>
+        <summary lang="en">Browse web pages using Kodi</summary>
+        <summary lang="es">Navega con Kodi por páginas web.</summary>
+        <summary lang="it">Sfoglia le pagine web con Kodi.</summary>
+        <summary lang="pt">Navegue por páginas da web com Kodi.</summary>
+        <description lang="ca">Navega amb Kodi per pàgines web per veure els vídeos de manera fàcil.</description>
+        <description lang="en">Browse web pages using Kodi to easily watch their video content.</description>
+        <description lang="es">Navega con Kodi por páginas web para ver sus videos de manera fácil.</description>
+        <description lang="it">Sfoglia le pagine web con Kodi per guardare facilmente i tuoi video.</description>
+        <description lang="pt">Navegue pelas páginas da web com Kodi para assistir seus vídeos
+            facilmente.</description>
+        <disclaimer lang="ca">[COLOR red]Els propietaris i distribuïdors d'aquest complemento no
+            proveeixen ni distribueixen cap contingut mostrat pel complemento ni tenen affiliación
+            alguna amb els proveïdors de l'contingut.[/COLOR]</disclaimer>
+        <disclaimer lang="en">[COLOR red]The owners and submitters to this addon do not host or
+            distribute any of the content displayed by these addons nor do they have any affiliation
+            with the content providers.[/COLOR]</disclaimer>
+        <disclaimer lang="es">[COLOR red]Los propietarios y distribuidores de este addon no proveen
+            ni distribuyen ningún contenido mostrado por el addon ni tienen affiliación alguna con
+            los proveedores del contenido.[/COLOR]</disclaimer>
+        <disclaimer lang="it">[COLOR red]I proprietari e i distributori di questo addon aggiuntivo
+            non forniscono o distribuiscono alcun contenuto visualizzato dal addon aggiuntivo né
+            hanno alcuna affiliazione con i fornitori di contenuti.[/COLOR]</disclaimer>
+        <disclaimer lang="pt">[COLOR red]Os proprietários e distribuidores deste addon não fornecem
+            ou distribuem qualquer conteúdo exibido pelo addon nem têm qualquer afiliação com os
+            provedores de conteúdo.[/COLOR]</disclaimer>
+        <platform>all</platform>
+        <license>GNU GPL v3</license>
+        <source>https://github.com/alfa-addon/addon</source>
+        <news>
+    [B]Estos son los cambios para esta versión:[/B]
+    • +18                     • Bloghorror             • Cinecalidad
+    • Don Torrent       • Elitetorrent           • PelisForte: Resucitado
+    • Pelis Maratón    • TVAnime
+
+    [B][COLOR red]Desactivados:[/COLOR][/B]
+    • AnimeSpace       • Series Antiguas   • UltrapelisHD
+
+    Además de simplificación del código interno del add-on</news>
+        <assets>
+            <icon>resources/icon.png</icon>
+            <fanart>resources/fanart.jpg</fanart>
+            <screenshot>resources/media/screenshots/1.jpg</screenshot>
+            <screenshot>resources/media/screenshots/2.jpg</screenshot>
+            <screenshot>resources/media/screenshots/3.jpg</screenshot>
+            <screenshot>resources/media/screenshots/4.jpg</screenshot>
+        </assets>
+    </extension>
+    <extension point="xbmc.service" library="videolibrary_service.py" start="login|startup" />
+</addon><addon id="plugin.video.alfa" name="Alfa" version="3.10.3" provider-name="Alfa Addon">
+    <requires>
+        <import addon="script.module.requests" />
+        <import addon="script.module.beautifulsoup4" version="4.5.3" />
+        <import addon="script.module.html5lib" version="0.999.0" />
+        <import addon="script.module.js2py" />
+        <import addon="script.module.pyaes" />
+        <import addon="script.module.rijndael" />
+        <import addon="script.module.brotlipython" />
+        <import addon="script.module.requests-toolbelt" />
+        <import addon="script.module.futures" />
+        <import addon="script.alfa-update-helper" optional="true" />
+        <import addon="script.module.pyqrcode" optional="true" />
     </requires>
     <extension point="xbmc.python.pluginsource" library="default.py">
         <provides>video</provides>
@@ -128,11 +255,10 @@
             <screenshot>resources/media/screenshots/4.jpg</screenshot>
         </assets>
     </extension>
-    <extension point="xbmc.service" library="videolibrary_service.py" start="login|startup"/>
-</addon>
-  <addon id="script.alfa-update-helper" name="Alfa Update Helper" version="0.0.7" provider-name="Alfa Develop group">
+    <extension point="xbmc.service" library="videolibrary_service.py" start="login|startup" />
+</addon><addon id="script.alfa-update-helper" name="Alfa Update Helper" version="0.0.7" provider-name="Alfa Develop group">
     <requires>
-        <import addon="script.module.requests"/>
+        <import addon="script.module.requests" />
     </requires>
     <extension point="xbmc.python.script" library="default.py">
         <provides>executable</provides>
@@ -150,88 +276,104 @@
     <extension point="xbmc.service" library="default.py" start="login|startup">
     </extension>
 
-</addon>
-  <addon id="script.module.requests-toolbelt" name="requests-toolbelt" version="1.0.0" provider-name="Ian Cordasco, Cory Benfield">
+</addon><addon id="script.module.requests-toolbelt" name="requests-toolbelt" version="1.0.0" provider-name="Ian Cordasco, Cory Benfield">
 	<requires>
-		<import addon="script.module.requests" version="2.0.1"/>
+		<import addon="script.module.requests" version="2.0.1" />
 	</requires>
-	<extension point="xbmc.python.module" library="lib"/>
+	<extension point="xbmc.python.module" library="lib" />
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en_GB">A utility belt for advanced users of python-requests</summary>
 		<description lang="en_GB">Packed for KODI from https://pypi.org/project/requests-toolbelt/</description>
 		<platform>all</platform>
-		<language/>
+		<language />
 		<license>Apache Software License (Apache 2.0)</license>
-		<forum/>
-		<website/>
+		<forum />
+		<website />
 		<source>https://toolbelt.readthedocs.io/</source>
-		<email/>
+		<email />
 		<assets>
 			<icon>resources/icon.png</icon>
 		</assets>
 	</extension>
-</addon>
-  <addon id="script.module.pyjsparser" name="pyjsparser" version="2.7.1" provider-name="Piotr Dabkowski">
-	<requires/>
-	<extension point="xbmc.python.module" library="lib"/>
+</addon><addon id="script.module.pyjsparser" name="pyjsparser" version="2.7.1" provider-name="Piotr Dabkowski">
+	<requires />
+	<extension point="xbmc.python.module" library="lib" />
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en_GB">Fast javascript parser (based on esprima.js)</summary>
 		<description lang="en_GB">Packed for KODI from https://pypi.org/project/pyjsparser/</description>
 		<platform>all</platform>
-		<language/>
+		<language />
 		<license>MIT</license>
-		<forum/>
-		<website/>
+		<forum />
+		<website />
 		<source>https://github.com/PiotrDabkowski/pyjsparser</source>
-		<email/>
+		<email />
 		<assets>
 			<icon>resources/icon.png</icon>
 		</assets>
 	</extension>
-</addon>
-  <addon id="script.module.brotlipython" name="brotlipython" version="0.0.1" provider-name="pothos">
-	<requires/>
-	<extension point="xbmc.python.module" library="lib"/>
+</addon><addon id="script.module.brotlipython" name="brotlipython" version="0.0.1" provider-name="pothos">
+	<requires />
+	<extension point="xbmc.python.module" library="lib" />
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en_GB">Pure Python brotli decoder</summary>
 		<description lang="en_GB">Packed for KODI from https://github.com/pothos/brotlipython/</description>
 		<platform>all</platform>
-		<language/>
+		<language />
 		<license>GPLv3</license>
-		<forum/>
-		<website/>
+		<forum />
+		<website />
 		<source>https://github.com/pothos/brotlipython</source>
-		<email/>
+		<email />
 		<assets>
 			<icon>resources/icon.png</icon>
 		</assets>
 	</extension>
-</addon>
-  <addon id="script.module.js2py" name="js2py" version="0.75" provider-name="Piotr Dabkowski">
+</addon><addon id="script.module.js2py" name="js2py" version="0.75.2" provider-name="Piotr Dabkowski">
 	<requires>
-		<import addon="script.module.tzlocal" version="1.2"/>
-		<import addon="script.module.six" version="1.10"/>
-		<import addon="script.module.pyjsparser" version="2.5.1"/>
+		<import addon="script.module.tzlocal" version="1.2" />
+		<import addon="script.module.six" version="1.10" />
+		<import addon="script.module.pyjsparser" version="2.5.1" />
 	</requires>
-	<extension point="xbmc.python.module" library="lib"/>
+	<extension point="xbmc.python.module" library="lib" />
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en_GB">JavaScript to Python Translator &amp; JavaScript interpreter written in 100% pure Python.</summary>
 		<description lang="en_GB">Packed for KODI from https://pypi.org/project/js2py/</description>
 		<platform>all</platform>
-		<language/>
+		<language />
 		<license>MIT</license>
-		<forum/>
-		<website/>
+		<forum />
+		<website />
 		<source>https://github.com/PiotrDabkowski/Js2Py</source>
-		<email/>
+		<email />
 		<assets>
 			<icon>resources/icon.png</icon>
 		</assets>
 	</extension>
-</addon>
-  <addon id="repository.alfa-addon" name="[COLOR red]Alfa Add-on[/COLOR] Repo" version="1.0.8" provider-name="Alfa Development Group">
+</addon><addon id="script.module.js2py" name="js2py" version="0.74.0" provider-name="Piotr Dabkowski">
+	<requires>
+		<import addon="script.module.tzlocal" version="1.2" />
+		<import addon="script.module.six" version="1.10" />
+		<import addon="script.module.pyjsparser" version="2.5.1" />
+	</requires>
+	<extension point="xbmc.python.module" library="lib" />
+	<extension point="xbmc.addon.metadata">
+		<summary lang="en_GB">JavaScript to Python Translator &amp; JavaScript interpreter written in 100% pure Python.</summary>
+		<description lang="en_GB">Packed for KODI from https://pypi.org/project/js2py/</description>
+		<platform>all</platform>
+		<language />
+		<license>MIT</license>
+		<forum />
+		<website />
+		<source>https://github.com/PiotrDabkowski/Js2Py</source>
+		<email />
+		<assets>
+			<icon>resources/icon.png</icon>
+		</assets>
+	</extension>
+</addon><addon id="repository.alfa-addon" name="[COLOR red]Alfa Add-on[/COLOR] Repo" version="1.0.8" provider-name="Alfa Development Group">
     <requires>
-        <import addon="xbmc.addon" version="12.0.0"/>
+        <import addon="xbmc.addon" version="12.0.0" />
     </requires>
     <extension point="xbmc.addon.repository" name="Alfa Add-on Repo">
         <dir>
@@ -263,5 +405,4 @@
         </assets>
         <source>https://github.com/alfa-addon/alfa-repo</source>
     </extension>
-</addon>
-</addons>
+</addon></addons>
