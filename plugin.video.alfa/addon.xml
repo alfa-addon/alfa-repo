@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<addon id="plugin.video.alfa" name="Alfa" version="3.10.3" provider-name="Alfa Addon">
+<addon id="plugin.video.alfa" name="Alfa" version="3.10.1" provider-name="Alfa Addon">
     <requires>
         <import addon="script.module.requests" />
         <import addon="script.module.beautifulsoup4" version="4.5.3" />
@@ -48,23 +48,22 @@
         <source>https://github.com/alfa-addon/addon</source>
         <news>
     [B]Estos son los cambios para esta versión:[/B]
-    • +18                • AnimeFenix             • Don Torrent
-    • HDFull             • Homecine               • MejorTorrent
-    • Playdede
+    • +18                     • Bloghorror             • Cinecalidad
+    • Don Torrent       • Elitetorrent           • PelisForte: Resucitado
+    • Pelis Maratón    • TVAnime
 
-    [B][COLOR red]Desactivado:[/COLOR][/B]
-    • Serieslan</news>
+    [B][COLOR red]Desactivados:[/COLOR][/B]
+    • AnimeSpace       • Series Antiguas   • UltrapelisHD
+
+    Además de simplificación del código interno del add-on</news>
         <assets>
-            <icon>resources/icon-christmas.png</icon>
-            <fanart>resources/fanart-christmas.jpg</fanart>
+            <icon>resources/icon.png</icon>
+            <fanart>resources/fanart.jpg</fanart>
             <screenshot>resources/media/screenshots/1.jpg</screenshot>
             <screenshot>resources/media/screenshots/2.jpg</screenshot>
             <screenshot>resources/media/screenshots/3.jpg</screenshot>
             <screenshot>resources/media/screenshots/4.jpg</screenshot>
         </assets>
     </extension>
-    <extension point="xbmc.service" library="videolibrary_service.py" start="login|startup"></extension>
-</addon>
-xtension>
     <extension point="xbmc.service" library="videolibrary_service.py" start="login|startup"></extension>
 </addon>
