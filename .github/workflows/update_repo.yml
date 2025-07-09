@@ -1,19 +1,19 @@
-# Release script for Alfa Addon 
-name: update
+name: Update add-on repository
 
 on:
+  repository_dispatch:
+    types: [update-repo]
   workflow_dispatch:
 
-# Set permissions for GitHub key
 permissions: write-all
 
 jobs:
-  deploy:
+  update-repo:
     name: Update repository
     runs-on: ubuntu-latest
 
     env:
-      GIT_USER_NAME: Alfa
+      GIT_USER_NAME: Alfa Update Bot
       GIT_USER_EMAIL: alfa-add-on@users.noreply.github.com
 
     steps:
