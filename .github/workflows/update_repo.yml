@@ -1,0 +1,38 @@
+name: Update add-on repository
+
+on:
+  repository_dispatch:
+    types: [update-repo]
+  workflow_dispatch:
+
+permissions: write-all
+
+env:
+  GIT_USER_NAME: Alfa Development Group
+  GIT_USER_EMAIL: 145614550+alfa-add-on@users.noreply.github.com
+
+jobs:
+  update-repo:
+    name: Update repository
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.8'
+
+      - name: Install Python requirements
+        run: pip install -r requirements-ci.txt
+
+      - name: Download repository dispatch ZIP
+        if: github.event_name == 'repository_dispatch'
+        run: |
+          mkdir -p "${{ github.event.client_payload.addon_id }}"
+          filename=$(basename "${{ github.event.client_payload.url }}")
+          curl -L "${{ github.event.client_payload.url }}" -o "${{ github.event.client_payload.addon_id }}/$filename"
+
+      - name: Generate repo
+        working-directory: ${{ github.workspace }}
+        run: |
+          sh gen_repo.sh
