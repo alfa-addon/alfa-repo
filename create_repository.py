@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 r"""
 Create a Kodi add-on repository from add-on sources
 
@@ -42,8 +42,8 @@ Repository:
 /kodi-plugin.program.remote.control.browser.git\
 :plugin.program.remote.control.browser
 
-This script has been tested with Python 2.7.10 and Python 3.6.5. It
-depends on the GitPython module.
+This script requires Python 3.12 or newer. GitPython is required only
+when fetching add-ons from Git URLs.
 """
 
 __author__ = "Chad Parry"
@@ -173,14 +173,13 @@ def copy_metadata_files(source_folder, addon_target_folder, addon_metadata):
                 os.path.join(addon_target_folder, target_basename))
 
 
-def on_remove_error(function, path, excinfo):
-    exc_info_value = excinfo[1]
+def on_remove_error(function, path, exc_info_value):
     if (hasattr(exc_info_value, 'errno') and
             exc_info_value.errno == errno.EACCES):
         os.chmod(path, stat.S_IWUSR)
         function(path)
     else:
-        raise
+        raise exc_info_value
 
 
 def fetch_addon_from_git(addon_location, target_folder):
@@ -207,8 +206,7 @@ def fetch_addon_from_git(addon_location, target_folder):
         addon_target_folder = os.path.join(target_folder, addon_metadata.id)
 
         # Create the compressed add-on archive.
-        if not os.path.isdir(addon_target_folder):
-            os.mkdir(addon_target_folder)
+        os.makedirs(addon_target_folder, exist_ok=True)
         archive_path = os.path.join(
             addon_target_folder, get_archive_basename(addon_metadata))
         with open(archive_path, 'wb') as archive:
@@ -227,7 +225,7 @@ def fetch_addon_from_git(addon_location, target_folder):
         shutil.rmtree(
             clone_folder,
             ignore_errors=False,
-            onerror=on_remove_error)
+            onexc=on_remove_error)
 
 
 def fetch_addon_from_folder(raw_addon_location, target_folder):
@@ -237,8 +235,7 @@ def fetch_addon_from_folder(raw_addon_location, target_folder):
     addon_target_folder = os.path.join(target_folder, addon_metadata.id)
 
     # Create the compressed add-on archive.
-    if not os.path.isdir(addon_target_folder):
-        os.mkdir(addon_target_folder)
+    os.makedirs(addon_target_folder, exist_ok=True)
     archive_path = os.path.join(
         addon_target_folder, get_archive_basename(addon_metadata))
     with zipfile.ZipFile(
@@ -288,8 +285,7 @@ def fetch_addon_from_zip(raw_addon_location, target_folder):
         addon_target_folder = os.path.join(target_folder, addon_metadata.id)
 
         # Copy the metadata files.
-        if not os.path.isdir(addon_target_folder):
-            os.mkdir(addon_target_folder)
+        os.makedirs(addon_target_folder, exist_ok=True)
         for (source_basename, target_basename) in get_metadata_basenames(
                 addon_metadata):
             try:
